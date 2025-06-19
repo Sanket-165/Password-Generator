@@ -1,0 +1,299 @@
+/* ========= Global Reset ========= */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+
+/* ========= Theme Variables ========= */
+:root {
+  --dk-gray: hsl(0, 0%, 43%);
+  --dk-gray-2: hsla(0, 0%, 24%, 0.1);
+  --lt-gray: hsl(0, 0%, 75%);
+  --lt-gray-2: hsla(0, 0%, 46%, 0.1);
+  --white: hsl(0, 0%, 100%);
+  --white-2: hsla(0, 0%, 100%, 0.382);
+
+  --blue: #030321;
+  --blue2: #032417;
+  --sky-blue: hsl(188, 76%, 67%);
+  --lt-blue: rgba(47, 47, 148, 1);
+}
+
+/* ========= Body Layout ========= */
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  background: linear-gradient(
+    70deg,
+    rgb(55, 3, 115) 15%,
+    rgb(19, 19, 119) 50%,
+    rgba(37, 9, 92, 1) 85%
+  );
+}
+
+/* ========= Container ========= */
+.container {
+  width: 90%;
+  max-width: 450px;
+}
+
+/* ========= Title ========= */
+.title {
+  color: var(--white);
+  text-align: center;
+  font-size: 2rem;
+  letter-spacing: 2px;
+  line-height: 1.2;
+  opacity: 1;
+  margin: 10px -5px 30px;
+}
+
+/* ========= Display Section ========= */
+.display_container {
+  position: relative;
+  display: flex;
+  background-color: var(--blue2);
+  border-radius: 1rem;
+  border-bottom: 0.35rem solid var(--lt-blue);
+  margin: 1rem 0;
+  padding-top: 0.35rem;
+}
+
+.display {
+  width: 100%;
+  background: transparent;
+  color: var(--lt-gray);
+  font-weight: 600;
+  font-size: 1.5rem;
+  line-height: 30px;
+  letter-spacing: 1px;
+  padding: 1.15rem 1rem 1.15rem 1rem;
+  padding-right: 3.25rem;
+  border: none;
+  outline: none;
+}
+
+.display::placeholder {
+  color: var(--lt-gray);
+  opacity:0.5;
+  position: absolute;
+  font-size: 1.5rem;
+  line-height: 30px;
+  top: 50%;
+  left: 1.5rem;
+  transform: translateY(-50%);
+}
+
+.display_container button {
+  position: absolute;
+  top: 50%;
+  right: 1.5rem;
+  transform: translateY(-50%);
+  background: var(--blue2);
+  border: none;
+  cursor: pointer;
+}
+
+/* ========= Input Container ========= */
+.input-container {
+  width: 100%;
+  background: var(--blue2);
+  border-radius: 1rem;
+  padding: 2rem;
+  border-bottom: 0.35rem solid var(--lt-blue);
+}
+
+/* ========= Length Control ========= */
+.length-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.length-container p,
+#lengthNumber {
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 30px;
+  letter-spacing: 1px;
+}
+
+.length-container p {
+  color: var(--lt-gray);
+}
+
+#lengthNumber {
+  color: var(--sky-blue);
+}
+
+/* ========= Checkbox Style ========= */
+.checkbox-wrapper-2 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: var(--lt-gray);
+  line-height: 2;
+  letter-spacing: 0.75px;
+  gap: 1rem;
+}
+
+.checkbox-wrapper-2 .ikxBAC {
+  appearance: none;
+  width: 40px;
+  height: 20px;
+  border-radius: 72px;
+  background-color: var(--dk-gray);
+  position: relative;
+  border: none;
+  flex-shrink: 0;
+  transition: all 100ms ease-out;
+}
+
+.checkbox-wrapper-2 .ikxBAC::after {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 14px;
+  height: 14px;
+  background-color: #fff;
+  border-radius: 50%;
+  transition: all 100ms ease-out;
+}
+
+.checkbox-wrapper-2 .ikxBAC:hover {
+  background-color: var(--white-2);
+}
+
+.checkbox-wrapper-2 .ikxBAC:checked {
+  background-color: #6e79d6;
+}
+
+.checkbox-wrapper-2 .ikxBAC:checked::after {
+  left: 23px;
+  background-color: #fff;
+}
+
+.checkbox-wrapper-2 input[type="checkbox"] {
+  cursor: pointer;
+}
+
+/* ========= Strength Indicator ========= */
+.strength-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1rem 0;
+}
+
+.strength-container p {
+  color: var(--lt-gray);
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.strength-container div {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+ 
+}
+
+/* ========= Generate Button ========= */
+.generateButton {
+  width: 100%;
+  height: 50px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 1rem;
+  color: var(--white);
+  background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 150ms ease;
+  user-select: none;
+  text-align: center;
+  line-height: 50px;
+}
+
+.generateButton:active {
+  transform: translateY(-3%);
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.08);
+}
+
+/* ========= Range Slider ========= */
+.slider {
+  width: 100%;
+  height: 3px;
+  margin: 2rem 0 1.5rem;
+  appearance: none;
+  border: none;
+  outline: none;
+  border-radius: 1rem;
+  cursor: pointer;
+  background-color: var(--lt-gray-2);
+  background-image: linear-gradient(#3063C9, #3063C9);
+  background-repeat: no-repeat;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: var(--white);
+  transition: all 100ms ease-in;
+  cursor: pointer;
+}
+
+.slider::-webkit-slider-thumb:hover {
+  box-shadow: 0 0 15px var(--white);
+  transform: scale(1.1);
+}
+
+/* ========= Copy Button ========= */
+.cpyBtn {
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+
+/* ========= Tooltip ========= */
+.tooltip {
+  position: absolute;
+  top: -35px;
+  left: -25px;
+  transform: translateX(-50%) scale(0);
+  background-color: var(--lt-blue);
+  color: var(--white);
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+  transform-origin: bottom;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.tooltip.active {
+  opacity: 1;
+  transform: translateX(-50%) scale(1);
+  pointer-events: auto;
+}
